@@ -1,0 +1,15 @@
+const  accountID = 1234
+let name = "faisal"
+var password = "1234"
+city = "bengaluru"
+let accountState;
+// accountID = 2 not allowed
+/*
+prefer not to use var , instead use let 
+*/
+name = "khan"
+password = "2314"
+city = "jaipur"
+console.log(name)
+console.log(accountID)
+console.table([accountID,name,password,city,accountState])
