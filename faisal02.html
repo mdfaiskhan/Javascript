@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <button onclick="addInput('1')">1</button>
+    <button onclick="addInput('2')">2</button>
+    <button onclick="addInput('3')">3</button> <br>
+    <button onclick="addInput('4')">4</button>
+    <button onclick="addInput('5')">5</button>
+    <button onclick="addInput('6')">6</button> <br>
+    <button onclick="addInput('7')">7</button>
+    <button onclick="addInput('8')">8</button>
+    <button onclick="addInput('9')">9</button> <br>
+    <button onclick="addInput('0')">0</button> <br>
+    <button onclick="op('+')">+</button>
+    <button onclick="op('-')">-</button>
+    <button onclick="op('*')">*</button>
+    <button onclick="op('/')">/</button> <br>
+    <button onclick="calculate()">Submit</button>
+    <button onclick="reset()">Reset</button> <br>
+    <input type="text" id="inputField" placeholder="Input">
+    <input type="text" id="outputField" placeholder="Output">
+
+    <script>
+        let currentOp = "";
+        let currentInput = "";
+
+        function addInput(value) {
+            currentInput += value;
+            document.getElementById('inputField').value = currentInput;
+        }
+
+        function op(operator) {
+            currentOp = operator;
+            currentInput += " " + operator + " ";
+            document.getElementById('inputField').value = currentInput;
+        }
+
+        function calculate() {
+            let result;
+            const expression = currentInput.split(" ");
+            const num1 = parseFloat(expression[0]);
+            const num2 = parseFloat(expression[2]);
+            const operator = expression[1];
+
+            switch(operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Error";
+                    break;
+            }
+
+            document.getElementById('outputField').value = result;
+        }
+
+        function reset() {
+            currentOp = "";
+            currentInput = "";
+            document.getElementById('inputField').value = "";
+            document.getElementById('outputField').value = "";
+        }
+    </script>
+</body>
+</html>
