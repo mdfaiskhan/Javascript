@@ -1,0 +1,28 @@
+let a=[1,2,3,4]
+let b=a.map(function(num){ return num*2;});
+console.log(b)
+
+let c=["1","2","3","4"]
+let d = c.map(function(str){return parseInt(str,10)});
+console.log(typeof d[1])
+
+let hero=[
+    {id:1,name:'Faisal'},
+    {id:2,name:'Khan'},
+    {id:3,name:'sdvgfs'}
+    ];
+    let names=hero.map(function(user){
+        return user.name;
+    })
+    console.log(names)
+
+let fruits=['apple','banana','orange']
+let veg=fruits.map(function(name,index){
+    return `Element ${name} is in ${index} index`;
+});
+console.log(veg)
+
+
+let aq=[1,2,3,4]
+let bq=aq.map(num=>num*num);
+console.log(bq)
